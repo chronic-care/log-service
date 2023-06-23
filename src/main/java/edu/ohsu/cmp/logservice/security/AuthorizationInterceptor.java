@@ -27,6 +27,10 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
 
         String authorization = request.getHeader(HttpHeaders.AUTHORIZATION);
 
+        if (request.getMethod().equals("OPTIONS")) {
+            // handling pre-flight;
+            return true;
+        }
         if (StringUtils.isNotBlank(authorization)) {
             if (authorization.startsWith(BEARER_PREFIX)) {
                 String clientToken = authorization.substring(BEARER_PREFIX.length());
