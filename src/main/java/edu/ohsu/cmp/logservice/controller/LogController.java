@@ -39,7 +39,8 @@ public class LogController {
                     logRequest.getLogLevel(),
                     logRequest.getEvent(),
                     logRequest.getPage(),
-                    logRequest.getMessage()
+                    logRequest.getMessage(),
+                    logRequest.getResourceCount()
             );
             return new ResponseEntity<>(HttpStatus.OK);
 

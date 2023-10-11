@@ -14,6 +14,7 @@ public class LogRequest {
     private String event;       // the WHAT: login, logout, someButtonClick, somethingElse, etc.
     private String page;        // the WHERE: Home, Vitals, Questionnaire, some-html-page.html, etc.
     private String message;     // "user logged in", "something went wrong", etc.
+    private Integer resourceCount;
 
     @Override
     public String toString() {
@@ -22,6 +23,7 @@ public class LogRequest {
                 ", event='" + event + '\'' +
                 ", page='" + page + '\'' +
                 ", message='" + message + '\'' +
+                ", resourceCount='" + resourceCount + '\'' +
                 '}';
     }
 
@@ -64,5 +66,13 @@ public class LogRequest {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Integer getResourceCount() {
+        return resourceCount;
+    }
+
+    public void setResourceCount(Integer resourceCount) {
+        this.resourceCount = resourceCount;
     }
 }
